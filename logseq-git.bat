@@ -24,6 +24,7 @@ if "%choice%"=="1" (
     echo Performing force pull from remote repository...
     git fetch origin
     git reset --hard origin/main
+    git clean -fd
     echo Force pull complete.
 ) else (
     echo Invalid choice. Please enter 1 or 2.
