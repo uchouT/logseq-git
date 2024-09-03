@@ -22,9 +22,9 @@ if "%choice%"=="1" (
     echo Force push complete.
 ) else if "%choice%"=="2" (
     echo Performing force pull from remote repository...
-    git fetch origin
+    git fetch --prune origin
     git reset --hard origin/main
-    git clean -fd
+	git clean -fd
     echo Force pull complete.
 ) else (
     echo Invalid choice. Please enter 1 or 2.
