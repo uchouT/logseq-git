@@ -16,15 +16,15 @@ cd /d %LOCAL_REPO_PATH%
 :: 根据选择执行操作
 if "%choice%"=="1" (
     echo Performing force push to remote repository...
-    git add -A
+    git add .
     git commit -m "Forced commit to remote from PC"
-    git push --force
+    git push origin main --force
     echo Force push complete.
 ) else if "%choice%"=="2" (
     echo Performing force pull from remote repository...
     git fetch --prune origin
     git reset --hard origin/main
-	git clean -fd
+    git clean -fd
     echo Force pull complete.
 ) else (
     echo Invalid choice. Please enter 1 or 2.
